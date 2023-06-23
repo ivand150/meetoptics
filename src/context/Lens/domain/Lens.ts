@@ -1,13 +1,26 @@
+import { Radius } from './Radius';
+import { Thickness } from './Thickness';
+
+type LensProps = {
+  id: string;
+  frontRadius: Radius;
+  backRadius: Radius;
+  thickness: Thickness;
+};
 export class Lens {
   readonly id: string;
-  readonly frontRadius: number;
-  readonly backRadius: number;
-  readonly thickness: number;
+  readonly frontRadius: Radius;
+  readonly backRadius: Radius;
+  readonly thickness: Thickness;
 
-  constructor(id: string, frontRadius: number, backRadius: number, thickness: number) {
-    this.id = id;
-    this.frontRadius = frontRadius;
-    this.backRadius = backRadius;
-    this.thickness = thickness;
+  constructor(props: LensProps) {
+    this.id = props.id;
+    this.frontRadius = props.frontRadius;
+    this.backRadius = props.backRadius;
+    this.thickness = props.thickness;
+  }
+
+  public static create(props: LensProps) {
+    return new Lens(props);
   }
 }
