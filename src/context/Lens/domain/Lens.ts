@@ -1,7 +1,7 @@
 import { Radius } from './Radius';
 import { Thickness } from './Thickness';
 
-type LensProps = {
+export type LensProps = {
   id: string;
   frontRadius: Radius;
   backRadius: Radius;
